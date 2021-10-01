@@ -40,6 +40,6 @@ if __name__ == '__main__':
     path_image_query = input('Type path of image you want to search matches in dataset: ')
     result = query_image(path_image_query)
     if not result:
-        print('There is image that can math with you image query in dataset')
+        print('There isn\'t image that can math with your image query in dataset')
     else:
         print('Find match with one image in dir %s and name %s' % (result[0], result[1]))
