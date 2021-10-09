@@ -10,7 +10,7 @@ def compare_images(image_search, image_compare):
         b, g, r = cv2.split(difference)
         images_equals = cv2.countNonZero(b) == 0 and cv2.countNonZero(g) == 0 and cv2.countNonZero(r) == 0
 
-    shift = cv2.xfeatures2d.SIFT_create()
+    shift = cv2.SIFT_create()
     kp_1, desc_1 = shift.detectAndCompute(image_query, None)
     kp_2, desc_2 = shift.detectAndCompute(image_analyze, None)
 
@@ -32,7 +32,7 @@ def compare_images(image_search, image_compare):
 
     percentage_to_match = len(good_points) / number_keypoints * 100
 
-    if images_equals or percentage_to_match > 80:
+    if images_equals or percentage_to_match > 65:
         return True
     return False
 

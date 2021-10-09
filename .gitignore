@@ -1,1 +1,3 @@
 images-dataset-compressed
+*.pyc
+core/__pycache__/*
