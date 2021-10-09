@@ -20,7 +20,10 @@ def rsvd(A, Omega):
 
 def compress_image(image, output_file='resultest.jpg', r_value=500):
     image = imageio.imread(image)
-    A = image[:, :, 1]
+    try:
+        A = image[:, :, 1]
+    except:
+        A = image[:, ]
     rank = r_value
     Omega = np.random.randn(A.shape[1], rank)
     u, s, v = rsvd(A, Omega)
