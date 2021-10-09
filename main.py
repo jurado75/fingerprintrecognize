@@ -52,6 +52,8 @@ def query_image_file(path_dir, image_to_query, file_j) -> object:
             if compare_images(image_to_query, path_i_subdir_file):
                 print('Find match with one image in dir %s and file name %s' % (file_j, file_i))
                 globals()['result_found'] = True, file_j, file_i
+                if os.path.exists('image-search-compressed.jpg'):
+                    os.remove('image-search-compressed.jpg')
                 return file_i
     return None
 
@@ -89,4 +91,8 @@ if __name__ == '__main__':
         path_image_query = sys.argv[1]
     else:
         path_image_query = input('Type path of image you want to search matches in dataset: ')
-    query_image(path_image_query)
+
+    if os.path.exists('image-search-compressed.jpg'):
+        os.remove('image-search-compressed.jpg')
+    compress_image(path_image_query, 'image-search-compressed.jpg', R_VALUE)
+    query_image('image-search-compressed.jpg')
