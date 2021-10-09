@@ -1,3 +1,4 @@
 images-dataset-compressed
 *.pyc
-core/__pycache__/*
+core/__*
+venv

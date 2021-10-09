@@ -50,7 +50,7 @@ def query_image_file(path_dir, image_to_query, file_j) -> object:
         for file_i in os.listdir(path_dir):
             path_i_subdir_file = os.path.join(path_dir, file_i)
             if compare_images(image_to_query, path_i_subdir_file):
-                print('Find match with one image in dir %s and file name %s' % (file_i, file_j))
+                print('Find match with one image in dir %s and file name %s' % (file_j, file_i))
                 globals()['result_found'] = True, file_j, file_i
                 return file_i
     return None
