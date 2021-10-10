@@ -92,7 +92,7 @@ if __name__ == '__main__':
     else:
         path_image_query = input('Type path of image you want to search matches in dataset: ')
 
-    if os.path.exists('image-search-compressed.jpg'):
-        os.remove('image-search-compressed.jpg')
-    compress_image(path_image_query, 'image-search-compressed.jpg', R_VALUE)
-    query_image('image-search-compressed.jpg')
+    # if os.path.exists('image-search-compressed.jpg'):
+    #     os.remove('image-search-compressed.jpg')
+    # compress_image(path_image_query, 'image-search-compressed.jpg', R_VALUE)
+    query_image(path_image_query)
