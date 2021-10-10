@@ -33,7 +33,6 @@ def compare_images(image_search, image_compare):
         number_keypoints = len(kp_2)
 
     percentage_to_match = len(good_points) / number_keypoints * 100
-    print(percentage_to_match, image_compare)
 
     if images_equals or percentage_to_match > 65:
         return True
